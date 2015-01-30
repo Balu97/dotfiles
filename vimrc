@@ -1,37 +1,18 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" All of your Plugins must be added before the following line
-filetype plugin indent on    " required
+set nocompatible
+filetype off
+filetype plugin indent on
 
 
 "start of my own Edit:
 set number
 set ruler
 
+set so=15
 "STATUSLINE
 set laststatus=2
 set encoding=utf-8
 
-function! StatuslineI()
-    hi statusline guibg=black guifg=lightblue
-    set statusline=%#Boolean#
-    set statusline+=\ I\ 
-    set statusline+=%#Include#
-    set statusline+=%F
-endfunction
-
-
-function! StatuslineN()
-    hi statusline guibg=black guifg=orange
-    set statusline=%#Identifier#
-    set statusline+=\ N\ 
-    set statusline+=%#Include#
-    set statusline+=%F
-endfunction
-
-call StatuslineN()
-au InsertLeave * call StatuslineN()
-au InsertEnter * call StatuslineI()
+let g:netrw_liststyle=3
 
 syntax on
 
